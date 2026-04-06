@@ -36,7 +36,7 @@ h1 {
   font-size: 2.8rem;
   font-weight: bold;
   line-height: 1.1;
-  margin: 1.5rem 0;
+  margin: 1.5rem 0;    
 }
 
 h2 {
@@ -62,7 +62,8 @@ p {
 }
 
 small {
-  font-size: 1.3rem;
+  font-size: 1.3rem; 
+  font-weight: 300;
 }
 
 a {
@@ -115,6 +116,30 @@ th {
   background-color: #f4f4f4;
 }
 
+.txtDestaque {
+  font-size: 1.8rem;
+}
+
+.quadrado { 
+  background-color: springgreen;
+  height: 50rem;
+  width: 50rem;
+}
+
+.container {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+}
+
+.containerNotFound {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  height: 70vh;
+}
+
 
 @media screen and (max-width: 960px) {
   html {
@@ -125,5 +150,11 @@ th {
 @media screen and (max-width: 600px) {
   html {
     font-size: 37.2%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 25%;
   }
 }
