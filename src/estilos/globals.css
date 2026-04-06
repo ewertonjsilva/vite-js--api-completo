@@ -1,0 +1,129 @@
+#root {
+  background-color: #fafafa;
+  color: #212121;
+  /* margin: 10px; */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  /* place-items: center; */
+  min-width: 32rem;
+  min-height: 100vh;
+  /* border: 1px solid red; */
+  /* box-sizing: border-box; */
+  width: 100%;
+}
+
+html {
+  /* Adiciona um efeito de rolagem suave quando links internos são clicados */
+  scroll-behavior: smooth;
+  /* Define o tamanho da fonte base como 10px (para facilitar o uso de rem) */
+  font-size: 62.5%;
+  /* Garante que o elemento html não seja maior que a largura da viewport */
+  max-width: 100vw;
+}
+
+
+* {
+  /* Altera o modelo de caixa para incluir padding e border na largura e altura de um elemento */
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  line-height: 1.1;
+  margin: 1.5rem 0;
+}
+
+h2 {
+  font-size: 2.3rem;
+  font-weight: bold;
+  line-height: 1.1;
+  margin: 0.8rem 0;
+}
+
+h3 {
+  font-size: 1.9rem;
+  font-weight: bold;
+  line-height: 1.1;
+  margin: 0.4rem 0;
+}
+
+label {
+  font-size: 1.8rem;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+small {
+  font-size: 1.3rem;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.6rem; 
+  color: cornflowerblue; 
+  margin-bottom: 0.5rem;
+}
+
+
+/* Estilo para Inputs, Selects e Textareas */
+input, select, textarea {
+  width: 100%;
+  padding: 1rem;
+  margin: 0.8rem 0;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.4rem;
+  box-sizing: border-box; /* Garante que o padding não quebre o layout */
+}
+
+/* Botões */
+button {
+  background-color: #646cff;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+button:hover {
+  filter: brightness(0.9);
+}
+
+/* Tabelas Responsivas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+th, td {
+  border: 0.1rem solid #ddd;
+  padding: 1.2rem;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+
+@media screen and (max-width: 960px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 37.2%;
+  }
+}
