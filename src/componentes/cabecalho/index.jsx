@@ -24,9 +24,9 @@ function Cabecalho() {
     return (
         <header className={styles.containerNav}>
             <div className={styles.menu}>
-                <div>
+                <div className={styles.logo}>
                     <MdFastfood className={styles.icon} id="logo" />
-                    <label id="titulo">BomBurguer</label>
+                    <label className={styles.titulo}>BomBurguer</label>
                 </div>
                 <nav className={styles.menuGrande}>
                     <Link

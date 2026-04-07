@@ -20,6 +20,17 @@
     width: 100%;
 }
 
+.containerNav .menu .logo {
+    display: flex; 
+    align-items: center;     
+}
+
+
+.containerNav .menu .titulo {
+    font-size: 4rem; 
+    font-weight: bold; 
+}
+
 .containerNav .menu .icon {
     color: #B71C1C;
     font-size: 4.4rem;

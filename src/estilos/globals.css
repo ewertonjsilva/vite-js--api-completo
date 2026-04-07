@@ -12,7 +12,8 @@
   min-height: 100vh;
   /* border: 1px solid red; */
   /* box-sizing: border-box; */
-  width: 100%;
+  width: 100%; 
+  font-family: "Roboto", sans-serif;
 }
 
 html {
