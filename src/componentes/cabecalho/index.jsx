@@ -19,7 +19,7 @@ function Cabecalho() {
             setMobile(false);
         }
     }
-    console.log(rota);
+    // console.log(rota);
     
     return (
         <header className={styles.containerNav}>
@@ -44,13 +44,13 @@ function Cabecalho() {
                     >Sobre</Link>
 
                     <Link
-                        to='/usuario/cadastro'
-                        className={rota.pathname === '/usuario/cadastro' ? styles.active : ''}
+                        to='/cadastro'
+                        className={rota.pathname === '/cadastro' ? styles.active : ''}
                     >Cadastrar</Link>
 
                     <Link
-                        to='/usuario/login'
-                        className={rota.pathname === '/usuario/login' ? styles.active : ''}
+                        to='/login'
+                        className={rota.pathname === '/login' ? styles.active : ''}
                     >Login</Link>
 
                 </nav>
@@ -74,9 +74,9 @@ function Cabecalho() {
                     className={rota.pathname === '/produtos' ? styles.active : ''}
                 >Produtos</Link>
                 <Link
-                    to='/usuario/cadastro'
+                    to='/cadastro'
                     onClick={ativaMenu}
-                    className={rota.pathname === '/usuario/cadastro' ? styles.active : ''}
+                    className={rota.pathname === '/cadastro' ? styles.active : ''}
                 >Cadastrar</Link>
                 <Link
                     to='/sobre'
@@ -84,9 +84,9 @@ function Cabecalho() {
                     className={rota.pathname === '/sobre' ? styles.active : ''}
                 >Sobre</Link>
                 <Link
-                    to='/usuario/login'
+                    to='/login'
                     onClick={ativaMenu}
-                    className={rota.pathname === '/usuario/login' ? styles.active : ''}
+                    className={rota.pathname === '/login' ? styles.active : ''}
                 >Login</Link>
             </div>
         </header>
