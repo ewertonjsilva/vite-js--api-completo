@@ -1,3 +1,4 @@
+import { MdLunchDining, MdLocalBar, MdDining, MdIcecream, MdFastfood } from 'react-icons/md';
 
 import Slider from "../../componentes/slider";
 
@@ -7,6 +8,27 @@ export default function Home() {
     return (
         <div className="container">
             <Slider />
+
+            <main className={styles.containerApresentacao}>
+                {/* Info local */}
+                <img className={styles.imagemLocal} src="./local.jpg" alt="Imagem do local" />
+                <div className={styles.containerTxtApresentacao}>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quasi consequuntur quas numquam ullam fuga voluptas? Sunt, soluta beatae fugit ipsa eos quam ratione explicabo voluptates blanditiis, suscipit repellendus voluptatem. Hic quasi consequuntur quas numquam ullam fuga voluptas? Sunt, soluta beatae fugit ipsa eos quam ratione explicabo voluptates blanditiis, suscipit repellendus voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quasi consequuntur quas numquam ullam fuga voluptas! Hic quasi consequuntur quas numquam ullam fuga voluptas...
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus sit aliquid quia ipsum voluptate voluptatibus praesentium, vel qui, eius, facilis reprehenderit saepe atque dicta eveniet quae voluptas commodi assumenda error.
+                    </p>
+                </div>
+            </main>
+
+            <div className={styles.tipos}>
+                <MdLunchDining className={styles.tpicon} />
+                <MdLocalBar className={styles.tpicon} />
+                <MdDining className={styles.tpicon} />
+                <MdIcecream className={styles.tpicon} />
+                <MdFastfood className={styles.tpicon} />
+            </div>
 
             <div className={styles.produtos}>
 

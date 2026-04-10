@@ -1,3 +1,52 @@
+.containerApresentacao {
+    margin: 1rem auto;
+    /* height: 28.5rem;  */
+    width: 100%;
+    max-width: 144rem; 
+    /* padding: 0 2rem 0 2rem;  */
+    border: 0.4rem solid #B71C1C; 
+    border-radius: 2rem;
+    /* overflow: hidden; */
+    display: flex;
+}
+
+.imagemLocal {
+    width: 50%;
+    border-radius: 2rem; 
+    margin: 1rem;
+} 
+
+.containerTxtApresentacao {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+}
+
+.containerApresentacao p {
+    font-size: 2.4rem;
+    margin: 1rem; 
+}
+
+
+.tipos {
+    color: #FAFAFA;
+    background-color: #B71C1C;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* max-width: 112.8rem;    */
+    border-radius: 2rem;
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
+}
+
+.tipos .tpicon {
+    font-size: 4rem;
+    margin: 2rem 6rem;
+    cursor: pointer;
+}
+
+
 .produtos {
     /* margin: 1rem auto; */
     display: flex;
@@ -26,7 +75,11 @@
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     /* background-color: #fff; */
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.6rem;     
+}
+
+.card:hover {
+    cursor: pointer;
 }
 
 .imagemContainer {

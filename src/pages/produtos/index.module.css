@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    align-items: center; 
+    flex-direction: column; 
+    /* border: solid 0.5rem #7F0000;  */
+    margin: 0 auto;
+    margin-top: 1rem; 
+    padding: 1rem;
+    border-radius: 2rem; 
+    color: #7F0000; 
+    width: 100%;
+    max-width: 144rem;     
+} 
+
+.imagem {
+    max-width: 72rem;
+} 
+
+.mensagem {
+    font-size: 2rem; 
+    text-align: center; 
+    margin-top: 2rem;
+}
