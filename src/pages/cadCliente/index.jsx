@@ -136,9 +136,14 @@ export default function CadastrarCliente() {
         }
     });
 
+    // const handleChange = (e) => {
+    //     setUsuario(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    // }
+
     const handleChange = (e) => {
-        setUsuario(prev => ({ ...prev, [e.target.name]: e.target.value }));
-    }
+        const { name, value } = e.target;
+        setUsuario(prev => ({ ...prev, [name]: value }));
+    };
 
     function validaNome() {
 
@@ -540,6 +545,8 @@ export default function CadastrarCliente() {
         }
     }
 
+    // console.log(usuario);
+
     return (
 
         <div className={styles.containerCadUsu}>
@@ -552,13 +559,15 @@ export default function CadastrarCliente() {
                         <label className={styles.label}>Nome completo</label>
                         <div className={styles.divInput}>
                             <input
-                                type="text"
                                 name="usu_nome"
+                                type="text"
                                 placeholder="Digite seu nome completo..."
                                 className={styles.input}
+                                value={usuario.usu_nome}
+                                // exemplo passando valor por state único
                                 // onChange={v => setUsu_nome(v.target.value)}
+                                // usando função que grava como state o objeto a ser enviado para API
                                 onChange={handleChange}
-                            // value={usu_nome}
                             />
                             <MdCheckCircle className={styles.sucesso} />
                             <MdError className={styles.erro} />
@@ -573,12 +582,13 @@ export default function CadastrarCliente() {
                         <label className={styles.label}>Data de nascimento</label>
                         <div className={styles.divInput}>
                             <input
-                                type="date"
                                 name="usu_dt_nasc"
+                                type="date"
+                                placeholder='dd/MM/aaaa'
                                 className={styles.input}
+                                value={usuario.usu_dt_nasc}
                                 // onChange={v => setUsu_nome(v.target.value)}
                                 onChange={handleChange}
-                            // value={usu_nome}
                             />
                             <MdCheckCircle className={styles.sucesso} />
                             <MdError className={styles.erro} />
@@ -595,12 +605,12 @@ export default function CadastrarCliente() {
                         <label className={styles.label}>Email</label>
                         <div className={styles.divInput}>
                             <input
-                                type="text"
                                 name="usu_email"
+                                type="text"
                                 placeholder="Digite seu email.."
                                 className={styles.input}
+                                value={usuario.usu_email || ''}
                                 onChange={handleChange}
-                            // value={usu_email}
                             />
                             <MdCheckCircle className={styles.sucesso} />
                             <MdError className={styles.erro} />
@@ -613,24 +623,21 @@ export default function CadastrarCliente() {
                     <div className={valida.cpf.validado} id="valCpf">
                         <label className={styles.label}>CPF</label>
                         <div className={styles.divInput}>
-                            {/* <InputMask
-                                mask="999.999.999-99"
-                                name="usu_cpf"
-                                placeholder="Digite seu CPF.."
-                                className={styles.input}
-                                onChange={handleChange}
-                            // value={usu_cpf}
-                            /> */}
                             <IMaskInput
-                                mask="000.000.000-00" // Note que aqui usa '0' para números em vez de '9'
                                 name="usu_cpf"
-                                placeholder="Digite seu CPF.."
+                                mask="000.000.000-00" // Note que aqui usa '0' para números em vez de '9'
+                                unmask={false} // 'true' para salvar apenas números, 'false' para salvar com máscara
+                                placeholder="000.000.000-00"
                                 className={styles.input}
-                                unmask={false} // Mantém a máscara no valor final ou não
-                                onAccept={(value, mask) => {
-                                    // O 'value' é o valor sem máscara, 'mask.value' é com máscara
-                                    console.log(value);
-                                }}
+                                value={usuario.usu_cpf || ''}
+                                // Exemplo uso IMaskInput
+                                // onAccept={(value, mask) => {
+                                //     console.log(value);
+                                //     // console.log(mask);
+                                // }}
+                                onAccept={(value) => handleChange({
+                                    target: { name: 'usu_cpf', value: value }
+                                })}
                             />
                             <MdCheckCircle className={styles.sucesso} />
                             <MdError className={styles.erro} />
@@ -640,12 +647,12 @@ export default function CadastrarCliente() {
                         }
                     </div>
                 </div>
-                {/*
+
                 <div className={styles.doisItens}>
                     <div className={valida.uf.validado + ' ' + styles.valEstado} id="valEstado">
                         <label className={styles.label}>Estado</label>
                         <div className={styles.divInput}>
-                            <select className={styles.select} name="uf" id="estado" onChange={handleChange} defaultValue={usuario.uf}>
+                            <select name="uf" id="estado" className={styles.select} defaultValue={usuario.uf} onChange={handleChange}>
                                 <option disabled value="0">Sel. estado</option>
                                 {
                                     ufs.map(uf => (
@@ -664,7 +671,7 @@ export default function CadastrarCliente() {
                     <div className={valida.cidade.validado}>
                         <label className={styles.label}>Cidade</label>
                         <div className={styles.divInput}>
-                            <select className={styles.select} name="cid_id" id="cidade" onChange={handleChange} defaultValue={usuario.cid_id}>
+                            <select name="cid_id" id="cidade" className={styles.select} defaultValue={usuario.cid_id} onChange={handleChange}>
                                 <option value="0">Selecione a cidade</option>
                                 {
                                     cidades.map(cid => (
@@ -685,12 +692,12 @@ export default function CadastrarCliente() {
                     <label className={styles.label}>Logradouro</label>
                     <div className={styles.divInput}>
                         <input
-                            type="text"
                             name="end_logradouro"
+                            type="text"
                             placeholder="Digite o endereço..."
                             className={styles.input}
+                            value={usuario.end_logradouro}
                             onChange={handleChange}
-                            // value={end_logradouro}
                         />
                         <MdCheckCircle className={styles.sucesso} />
                         <MdError className={styles.erro} />
@@ -705,12 +712,12 @@ export default function CadastrarCliente() {
                         <label className={styles.label}>Número</label>
                         <div className={styles.divInput}>
                             <input
-                                type="text"
                                 name="end_num"
+                                type="text"
                                 placeholder="nº do endereço"
                                 className={styles.input}
+                                value={usuario.end_num}
                                 onChange={handleChange}
-                                // value={end_num}
                             />
                             <MdCheckCircle className={styles.sucesso} />
                             <MdError className={styles.erro} />
@@ -724,12 +731,12 @@ export default function CadastrarCliente() {
                         <label className={styles.label}>Bairro</label>
                         <div className={styles.divInput}>
                             <input
-                                type="text"
                                 name="end_bairro"
+                                type="text"
                                 placeholder="Insira o nome do bairro"
                                 className={styles.input}
+                                value={usuario.end_bairro}
                                 onChange={handleChange}
-                                // value={end_bairro}
                             />
                             <MdCheckCircle className={styles.sucesso} />
                             <MdError className={styles.erro} />
@@ -745,12 +752,12 @@ export default function CadastrarCliente() {
                         <label className={styles.label}>Complemento</label>
                         <div className={styles.divInput}>
                             <input
-                                type="text"
                                 name="end_complemento"
+                                type="text"
                                 placeholder="Complemento do endereço"
                                 className={styles.input}
+                                value={usuario.end_complemento}
                                 onChange={handleChange}
-                                // value={end_complemento}
                             />
                             <MdCheckCircle className={styles.sucesso} />
                             <MdError className={styles.erro} />
@@ -763,22 +770,25 @@ export default function CadastrarCliente() {
                     <div className={valida.celular.validado} id="valCelular">
                         <label className={styles.label}>nº celular</label>
                         <div className={styles.divInput}>
-                            {/* <input
-                                type="text"
+                            <IMaskInput
                                 name="cli_cel"
-                                placeholder="Insira o nº do celular"
+                                mask={[
+                                    { mask: '(00) 0000-0000' }, // Máscara para fixo (8 dígitos)
+                                    { mask: '(00) 00000-0000' } // Máscara para celular (9 dígitos)
+                                ]}
+                                placeholder="(00) 00000-0000"
                                 className={styles.input}
-                                onChange={handleChange}
-                                // value={cli_cel}
-                            /> */}
-                {/*
-                            <InputMask 
-                                mask="(99)99999-9999" 
-                                name="cli_cel" 
-                                placeholder="Insira o nº do celular" 
-                                className={styles.input} 
-                                // value={telefone} 
-                                onChange={handleChange} 
+                                value={usuario.cli_cel || ''}
+                                unmask={false} // false: salva (11) 99999-9999 | true: salva apenas 11999999999
+                                // Mantendo o padrão para o seu handleChange
+                                onAccept={(value) => handleChange({
+                                    target: { name: 'cli_cel', value: value }
+                                })}
+                                // O dispatch ajuda o IMask a decidir qual máscara usar em tempo real
+                                dispatch={(appended, dynamicMasked) => {
+                                    const number = (dynamicMasked.value + appended).replace(/\D/g, '');
+                                    return number.length <= 10 ? dynamicMasked.compiledMasks[0] : dynamicMasked.compiledMasks[1];
+                                }}
                             />
                             <MdCheckCircle className={styles.sucesso} />
                             <MdError className={styles.erro} />
@@ -788,7 +798,7 @@ export default function CadastrarCliente() {
                         }
                     </div>
                 </div>
-
+                {/*
                 <div className={valida.senha.validado} id="validaSn1">
                     <label className={styles.label}>Senha</label>
                     <div className={styles.divInput}>
