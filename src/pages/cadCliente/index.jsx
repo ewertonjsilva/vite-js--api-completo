@@ -9,15 +9,15 @@ import IconCad from '/icones/cadastrar.svg';
 
 import styles from './index.module.css';
 
-// import { ufs, cidades } from '../../../mocks/dados';
+import { mkpUfs, mkpCidades } from './mockup';
 
 // import api from '@/services/api';
 
 export default function CadastrarCliente() {
 
     let navigate = useNavigate();
-    const [ufs, setUfs] = useState([]);
-    const [cidades, setCidades] = useState([]);
+    const [ufs, setUfs] = useState(mkpUfs);
+    const [cidades, setCidades] = useState(mkpCidades);
 
     // info
     const [usuario, setUsuario] = useState({
@@ -545,7 +545,7 @@ export default function CadastrarCliente() {
         }
     }
 
-    // console.log(usuario);
+    console.log(usuario);
 
     return (
 
@@ -656,7 +656,7 @@ export default function CadastrarCliente() {
                                 <option disabled value="0">Sel. estado</option>
                                 {
                                     ufs.map(uf => (
-                                        <option key={uf.cid_uf} value={uf.cid_uf}>{uf.cid_uf}</option>
+                                        <option key={uf.id} value={uf.id}>{uf.uf}</option>
                                     ))
                                 }
                             </select>
@@ -675,7 +675,7 @@ export default function CadastrarCliente() {
                                 <option value="0">Selecione a cidade</option>
                                 {
                                     cidades.map(cid => (
-                                        <option key={cid.cid_id} value={cid.cid_id}>{cid.cid_nome}</option>
+                                        <option key={cid.id} value={cid.id}>{cid.cidade}</option>
                                     ))
                                 }
                             </select>
@@ -798,17 +798,17 @@ export default function CadastrarCliente() {
                         }
                     </div>
                 </div>
-                {/*
+                
                 <div className={valida.senha.validado} id="validaSn1">
                     <label className={styles.label}>Senha</label>
                     <div className={styles.divInput}>
                         <input
-                            type="password"
                             name="usu_senha"
+                            type="password"
                             placeholder="Digite sua senha..."
                             className={styles.input}
+                            value={usuario.usu_senha}
                             onChange={handleChange}
-                        // value={usu_senha}
                         />
                         <MdCheckCircle className={styles.sucesso} />
                         <MdError className={styles.erro} />
@@ -822,12 +822,12 @@ export default function CadastrarCliente() {
                     <label className={styles.label}>Confirmação de senha</label>
                     <div className={styles.divInput}>
                         <input
-                            type="password"
                             name="confSenha"
+                            type="password"
                             placeholder="Digite sua senha novamente..."
                             className={styles.input}
+                            value={usuario.confSenha}
                             onChange={handleChange}
-                        // value={confSenha}
                         />
                         <MdCheckCircle className={styles.sucesso} />
                         <MdError className={styles.erro} />
@@ -836,7 +836,7 @@ export default function CadastrarCliente() {
                         valida.confSenha.mensagem.map(mens => <small key={mens} id="confSenha" className={styles.small}>{mens}</small>)
                     }
                 </div>
-*/}
+
                 <button className={styles.button} type="submit">
                     <img className={styles.img} src={IconCad} alt="cadastrar" />
                     {/* <MdPersonAddAlt /> */}

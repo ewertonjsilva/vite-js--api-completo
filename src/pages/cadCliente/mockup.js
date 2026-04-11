@@ -1,4 +1,4 @@
-export const cidades = [
+export const mkpCidades = [
     {
         "id": 3541,
         "uf": "SP",
@@ -21,3 +21,21 @@ export const cidades = [
     }
 ];
 
+export const mkpUfs = [
+    {
+        "id": 31,
+        "uf": "MG"
+    },
+    {
+        "id": 11,
+        "uf": "SP"
+    },
+    {
+        "id": 21,
+        "uf": "RJ"
+    },
+    {
+        "id": 41,
+        "uf": "RS"
+    }
+];

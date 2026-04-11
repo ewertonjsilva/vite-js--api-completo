@@ -43,10 +43,10 @@
     display: flex;
     border-radius: 1rem;
     font-size: 1.4rem;
-    width: 100%;
+    /* width: 100%; */
     padding: 1rem;
-    height: 2rem;
-    max-width: none;
+    /* height: 2rem; */
+    /* max-width: none; */
 }
 
 .sucesso {
@@ -106,10 +106,10 @@
 }
 
 .select {
-    padding: 0 1rem;
+    padding: 1rem 1rem;
     width: 100%;
     font-size: 1.4rem;
-    height: 5rem;
+    /* height: 5rem; */
     border-radius: 1rem;
     border: 2px solid #7F0000;
     color: #7F0000;
