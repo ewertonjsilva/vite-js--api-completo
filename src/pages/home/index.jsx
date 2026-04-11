@@ -1,10 +1,16 @@
 import { MdLunchDining, MdLocalBar, MdDining, MdIcecream, MdFastfood } from 'react-icons/md';
 
 import Slider from "../../componentes/slider";
+import CardProduto from '../../componentes/cardProduto';
 
 import styles from './index.module.css';
 
+import { produtos } from './mockup';
+
 export default function Home() {
+
+    console.log(produtos);
+
     return (
         <div className="container">
             <Slider />
@@ -32,7 +38,23 @@ export default function Home() {
 
             <div className={styles.produtos}>
 
-                <div className={styles.card}>
+                {/* {
+                    produtos.map(item =>
+                        <p>{item.prd_nome}</p>
+                    )
+                } */}
+
+                {
+                    produtos.map(item =>
+                        <CardProduto 
+                            nome = {item.prd_nome} 
+                            valor = {item.prd_valor} 
+                            imagem = {item.prd_img}
+                        />
+                    )
+                }
+
+                {/* <div className={styles.card}>
                     <div className={styles.imagemContainer}>
                         <img
                             src='/temp/hamburger-bacon.jpg'
@@ -42,43 +64,7 @@ export default function Home() {
                     </div>
                     <span className={styles.produtoNome}>Hamburguer de Bacon</span>
                     <span className={styles.produtoValor}>R$ 29,99</span>
-                </div>
-
-                <div className={styles.card}>
-                    <div className={styles.imagemContainer}>
-                        <img
-                            src='/temp/hamburger-batata.jpg'
-                            alt='Hamburguer com Batata'
-                            className={styles.imagemProduto}
-                        />
-                    </div>
-                    <span className={styles.produtoNome}>Hamburguer com Batata</span>
-                    <span className={styles.produtoValor}>R$ 49,99</span>
-                </div>
-
-                <div className={styles.card}>
-                    <div className={styles.imagemContainer}>
-                        <img
-                            src='/temp/sucoLaranja.jpg'
-                            alt='Suco de Laranja'
-                            className={styles.imagemProduto}
-                        />
-                    </div>
-                    <span className={styles.produtoNome}>Suco de Laranja</span>
-                    <span className={styles.produtoValor}>R$ 14,00</span>
-                </div>
-
-                <div className={styles.card}>
-                    <div className={styles.imagemContainer}>
-                        <img
-                            src='/temp/sorvete.jpeg'
-                            alt='Sorvete de Chocolate'
-                            className={styles.imagemProduto}
-                        />
-                    </div>
-                    <span className={styles.produtoNome}>Sorvete de Chocolate</span>
-                    <span className={styles.produtoValor}>R$ 17,50</span>
-                </div>
+                </div> */}
 
             </div>
         </div>
