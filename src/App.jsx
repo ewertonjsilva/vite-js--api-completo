@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
 import Home from './pages/home';
-import CadastrarCliente from './pages/cadCliente';
+import CadastrarCliente from './pages/usuarios/clientes/formulario';
 import Login from './pages/login';
 import Produtos from './pages/produtos';
 import NotFound from './pages/notFound';
@@ -17,7 +17,7 @@ function App() {
       <Route path="/produtos" element={<Produtos />} />
       <Route path="/login" element={<Login />} />
 
-      <Route path="/Teste" element={<Teste />} />
+      <Route path="/teste" element={<Teste />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   )
