@@ -5,7 +5,7 @@ import { IMaskInput } from 'react-imask';
 
 import { MdCheckCircle, MdError } from "react-icons/md";
 
-import IconCad from '/icones/cadastrar.svg';
+import IconCad from '../../../../imagens/icones/cadastrar.svg';
 
 import styles from './index.module.css';
 

@@ -12,8 +12,23 @@ export default function Teste() {
             <Link to="/cadastro">
                 Cadastro de cliente
             </Link>
+            <Link to="/usuario-edt">
+                Editar usuário
+            </Link>
             <Link to="/produtos">
                 Produtos
+            </Link>
+            <Link to="/produto">
+                Produto
+            </Link>
+            <Link to="/gerenciamento-produto">
+                Gerenciamento de produtos
+            </Link>
+            <Link to="/gerenciamento-ingredientes">
+                Gerenciamento de ingredientes
+            </Link>
+            <Link to="/mesas">
+                Mesas
             </Link>
         </div>
     );

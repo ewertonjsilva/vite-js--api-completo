@@ -1,0 +1,79 @@
+.mesasContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+.mesaCard {
+    border: 0.2rem solid;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 20rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.mesaCard h2 {
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+.mesaCard p {
+    margin: 0.5rem 0;
+}
+
+.mesaLugaresControl {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mesaLugaresControl button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+}
+
+.mesaLugaresControl button:hover {
+    background-color: #0056b3;
+}
+
+.mesaCard:hover {
+    transform: scale(1.05);
+}
+
+.constainerDelete {
+    display: flex;
+    justify-content: end;
+}
+
+.iconDelete {
+    color: #7F0000;
+}
+
+.iconDelete:hover {
+    color: #F05545;
+}
+
+.addButton {
+    background-color: #B71C1C;
+    color: white;
+    border: none;
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 1rem;
+    width: 20rem;
+    cursor: pointer;
+    font-size: 8rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.addButton:hover {
+    background-color: #F05545;
+}

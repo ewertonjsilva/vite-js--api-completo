@@ -1,0 +1,141 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    /* border: solid 0.5rem #B71C1C; */
+    margin: 1rem auto;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    color: #7F0000;
+    width: 100%;
+    max-width: 112.8rem;
+    height: 60vh;
+}
+
+.container .containerItem {
+    width: 50%;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin-bottom: 16px;
+}
+
+.container .containerItem .imagemProd {
+    object-fit: fill;
+    /* cover */
+    width: 80%;
+    height: 100%;
+    border-radius: 2rem;
+}
+
+.container .containerItem .titulo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .containerItem .titulo .icon {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.container .containerItem .descricao {
+    font-size: 3rem;
+}
+
+.valor {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+}
+
+.container .containerItem .comprar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-left: 1rem; */
+    width: 100%;
+}
+
+.spanQtd {
+    display: block;
+    margin: 1rem;
+    text-align: center;
+}
+
+.spanTt {
+    font-size: 2rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    border: solid #FAFAFA 0.2rem;
+}
+
+.input {
+    height: 2.5rem;
+    width: 4rem;
+    border: solid #7F0000 0.1rem;
+    color: #7F0000;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.button {
+    height: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 15rem;
+    background-color: #FAFAFA;
+    border: solid #7F0000 0.3rem;
+    border-radius: 2rem;
+    color: #7F0000;
+    cursor: pointer;
+    font-size: 1.6rem;
+}
+
+.button:hover {
+    background-color: #F05545;
+}
+
+.lblComp {
+    width: 50%;
+}
+
+
+.imgBtn {
+    height: 4rem;
+    width: 3rem;
+
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .imagemProd {
+        max-height: none;
+    }
+
+    .button {
+        width: 20rem;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .container .containerItem .comprar {
+        flex-direction: column;
+    }
+}

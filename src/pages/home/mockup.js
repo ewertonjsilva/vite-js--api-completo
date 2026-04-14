@@ -1,15 +1,15 @@
 
-import prod1 from '/temp/hamburger-bacon.jpg';
-import prod2 from '/temp/hamburger-batata.jpg';
-import prod3 from '/temp/lancheBasico.jpg';
-import prod4 from '/temp/sucoLaranja.jpg';
-import prod5 from '/temp/sucoVerde.jpg';
-import prod6 from '/temp/sorvete.jpeg';
+import prod1 from '../../imagens/temp/hamburger-bacon.jpg';
+import prod2 from '../../imagens/temp/hamburger-batata.jpg';
+import prod3 from '../../imagens/temp/lancheBasico.jpg';
+import prod4 from '../../imagens/temp/sucoLaranja.jpg';
+import prod5 from '../../imagens/temp/sucoVerde.jpg';
+import prod6 from '../../imagens/temp/sorvete.jpeg';
 
-import ic_lanche from '/icones/lanche.svg';
-import ic_combo from '/icones/todos.svg';
-import ic_bebida from '/icones/suco.svg';
-import ic_sobremesa from '/icones/icecream.svg';
+import ic_lanche from '../../imagens/icones/lanche.svg';
+import ic_combo from '../../imagens/icones/todos.svg';
+import ic_bebida from '../../imagens/icones/suco.svg';
+import ic_sobremesa from '../../imagens/icones/icecream.svg';
 
 export let produtos = [
     {

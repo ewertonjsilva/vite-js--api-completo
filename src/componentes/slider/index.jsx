@@ -2,10 +2,10 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import { Carousel } from 'react-responsive-carousel';
 
-import promo1 from '../../../public/temp/slider/promoGenerica.png';
-import promo2 from '../../../public/temp/slider/promoLanchePeixe.png';
-import promo3 from '../../../public/temp/slider/promoSaladaDaCasa.png';
-import promo4 from '../../../public/temp/slider/promoSucoLaranja.png';
+import promo1 from '../../imagens/temp/slider/promoGenerica.png';
+import promo2 from '../../imagens/temp/slider/promoLanchePeixe.png';
+import promo3 from '../../imagens/temp/slider/promoSaladaDaCasa.png';
+import promo4 from '../../imagens/temp/slider/promoSucoLaranja.png';
 
 export default function Slider() {
     return (

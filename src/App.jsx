@@ -4,7 +4,14 @@ import Home from './pages/home';
 import CadastrarCliente from './pages/usuarios/clientes/formulario';
 import Login from './pages/login';
 import Produtos from './pages/produtos';
+import Produto from './pages/produtos/produto';
+import GerProdutos from './pages/gerenciamento/produtos';
+import GerIngredientes from './pages/gerenciamento/produtos/ingredientes';
+import EdtUsuario from './pages/usuarios/formulario';
+import Mesas from './pages/mesas'; 
 import NotFound from './pages/notFound';
+
+
 import Teste from './pages/teste';
 
 
@@ -15,7 +22,13 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/cadastro" element={<CadastrarCliente />} />
       <Route path="/produtos" element={<Produtos />} />
+      <Route path="/produto" element={<Produto />} />
+      <Route path="/gerenciamento-produto" element={<GerProdutos />} />
+      <Route path="/gerenciamento-ingredientes" element={<GerIngredientes />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/usuario-edt" element={<EdtUsuario />} />
+      <Route path="/mesas" element={<Mesas />} />
+
 
       <Route path="/teste" element={<Teste />} />
       <Route path="*" element={<NotFound />} />
