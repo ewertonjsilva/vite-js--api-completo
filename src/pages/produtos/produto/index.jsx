@@ -8,19 +8,20 @@ import carr from '../../../imagens/icones/carrinho.svg';
 
 import styles from './index.module.css';
 
-// import { produtos} from '../../../mocks/dados';
+import { produtos} from './mockup';
 
 function Produto({ idProduto }) {
 
-    const [produto, setProduto] = useState({
-        "prd_id": "",
-        "prd_nome": "",
-        "prd_valor": "",
-        "prd_unidade": "",
-        "ptp_icone": "",
-        "prd_img": "",
-        "prd_descricao": ""
-    });
+    // const [produto, setProduto] = useState({
+    //     "prd_id": "",
+    //     "prd_nome": "",
+    //     "prd_valor": "",
+    //     "prd_unidade": "",
+    //     "ptp_icone": "",
+    //     "prd_img": "",
+    //     "prd_descricao": ""
+    // });
+    const [produto, setProduto] = useState(produtos[0]);
     const [qtd, setQtd] = useState(1);
     const [total, setTotal] = useState(0);
 

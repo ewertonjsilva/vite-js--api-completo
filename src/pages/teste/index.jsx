@@ -30,6 +30,9 @@ export default function Teste() {
             <Link to="/mesas">
                 Mesas
             </Link>
+            <Link to="/carrinho">
+                Carrinho
+            </Link>
         </div>
     );
 }

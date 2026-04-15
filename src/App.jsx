@@ -9,6 +9,7 @@ import GerProdutos from './pages/gerenciamento/produtos';
 import GerIngredientes from './pages/gerenciamento/produtos/ingredientes';
 import EdtUsuario from './pages/usuarios/formulario';
 import Mesas from './pages/mesas'; 
+import CompCarrinho from './pages/carrinho';
 import NotFound from './pages/notFound';
 
 
@@ -27,6 +28,7 @@ function App() {
       <Route path="/gerenciamento-ingredientes" element={<GerIngredientes />} />
       <Route path="/login" element={<Login />} />
       <Route path="/usuario-edt" element={<EdtUsuario />} />
+      <Route path="/carrinho" element={<CompCarrinho />} />
       <Route path="/mesas" element={<Mesas />} />
 
 
