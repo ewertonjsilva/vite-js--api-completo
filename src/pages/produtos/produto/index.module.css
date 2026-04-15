@@ -38,7 +38,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
+    gap: 1rem;
 }
 
 .container .containerItem .titulo .icon {
@@ -60,14 +61,15 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /* margin-left: 1rem; */
+    margin-top: 6rem;
     width: 100%;
 }
 
 .spanQtd {
     display: block;
     margin: 1rem;
-    text-align: center;
+    text-align: center; 
+    font-size: 2rem;
 }
 
 .spanTt {
@@ -77,15 +79,20 @@
     align-items: center;
     margin: 0;
     border: solid #FAFAFA 0.2rem;
+    width: 16rem;
 }
 
 .input {
     height: 2.5rem;
-    width: 4rem;
+    width: 6rem;
     border: solid #7F0000 0.1rem;
     color: #7F0000;
     font-size: 1.6rem;
-    text-align: center;
+    /* text-align: center; */
+}
+
+.input:focus {
+    outline-color: #F05545;
 }
 
 .button {
@@ -105,19 +112,22 @@
 }
 
 .button:hover {
-    background-color: #F05545;
+    background-color: #7F0000;
+    color: #FAFAFA;
 }
 
 .lblComp {
     width: 50%;
 }
 
-
 .imgBtn {
     height: 4rem;
     width: 3rem;
-
+    margin-left: 1rem; 
+    fill: currentColor;
 }
+
+
 
 @media screen and (max-width: 767px) {
     .container {

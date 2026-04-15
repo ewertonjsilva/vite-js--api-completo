@@ -8,18 +8,18 @@ import carr from '../../../imagens/icones/carrinho.svg';
 
 import styles from './index.module.css';
 
-import { produtos} from './mockup';
+import { produtos} from '../../teste/mockup';
 
 function Produto({ idProduto }) {
 
     // const [produto, setProduto] = useState({
-    //     "prd_id": "",
-    //     "prd_nome": "",
-    //     "prd_valor": "",
-    //     "prd_unidade": "",
-    //     "ptp_icone": "",
-    //     "prd_img": "",
-    //     "prd_descricao": ""
+    //     "id": "",
+    //     "nome": "",
+    //     "valor": "",
+    //     "unidade": "",
+    //     "icone": "",
+    //     "imgProduto": "",
+    //     "descricao": ""
     // });
     const [produto, setProduto] = useState(produtos[0]);
     const [qtd, setQtd] = useState(1);
@@ -41,11 +41,11 @@ function Produto({ idProduto }) {
     // useEffect(() => {
 
     //     handleCarregaProduto();
-    //     setTotal(produto.prd_valor);
+    //     setTotal(produto.valor);
 
     //     async function handleCarregaProduto() {
     //         const dadosApi = {
-    //             prd_id: idProduto
+    //             id: idProduto
     //         }
     //         try {
     //             const response = await api.post('/listaprodutos', dadosApi);
@@ -68,7 +68,7 @@ function Produto({ idProduto }) {
 
     function handleAtlQtdVlr(nvVlr) {
         let totalTemp = 0;
-        totalTemp = Number(nvVlr) * produto.prd_valor;
+        totalTemp = Number(nvVlr) * produto.valor;
         setQtd(Number(nvVlr));
         setTotal(totalTemp.toFixed(2));
     }
@@ -77,10 +77,10 @@ function Produto({ idProduto }) {
     //     if (user) {
 
     //         const item = {
-    //             prd_id: produto.prd_id,
-    //             prd_nome: produto.prd_nome,
-    //             prd_valor: produto.prd_valor,
-    //             prd_img: produto.prd_img,
+    //             id: produto.id,
+    //             nome: produto.nome,
+    //             valor: produto.valor,
+    //             imgProduto: produto.imgProduto,
     //             ppd_qtd: qtd,
     //             ppd_obs: ''
     //         };
@@ -95,27 +95,26 @@ function Produto({ idProduto }) {
     return (
         <div className={styles.container}>
             {
-                produto.prd_id !== '' ?
+                produto.id !== '' ?
                     <>
                         <div className={styles.containerItem}>
                             <img
-                                loader={imageLoader}
                                 className={styles.imagemProd}
-                                src={produto.prd_img}
-                                alt={"Imagem " + produto.prd_nome}
+                                src={produto.imgProduto}
+                                alt={"Imagem " + produto.nome}
                             />
                         </div>
                         <div className={styles.containerItem}>
                             <div className={styles.titulo}>
-                                <h1>{produto.prd_nome}</h1>
+                                <h1>{produto.nome}</h1>
                                 <img
                                     className={styles.icon}
-                                    src={produto.ptp_icone}
-                                    alt={produto.ptp_icone}
+                                    src={produto.icone}
+                                    alt={produto.icone}
                                 />
                             </div>
-                            <span className={styles.descricao}>{produto.prd_descricao}</span>
-                            <span className={styles.valor}>{'R$ ' + produto.prd_valor}</span>
+                            <span className={styles.descricao}>{produto.descricao}</span>
+                            <span className={styles.valor}>{'R$ ' + produto.valor}</span>
                             <div className={styles.comprar}>
                                 <span className={styles.spanQtd}>Quantidade</span>
                                 <input

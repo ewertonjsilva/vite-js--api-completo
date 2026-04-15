@@ -294,5 +294,4 @@ export let ingredientesMock = [
         "ing_img": img_ingredientes,
         "ing_custo_adicional": 7.00
     }
-    // Adicione mais ingredientes para teste
 ];
