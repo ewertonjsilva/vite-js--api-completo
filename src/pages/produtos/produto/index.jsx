@@ -23,7 +23,7 @@ function Produto({ idProduto }) {
     // });
     const [produto, setProduto] = useState(produtos[0]);
     const [qtd, setQtd] = useState(1);
-    const [total, setTotal] = useState(0);
+    const [total, setTotal] = useState(produtos[0].valor * qtd);
 
     // const dispatch = useDispatch();  // Utiliza o dispatch do Redux
 
@@ -114,7 +114,7 @@ function Produto({ idProduto }) {
                                 />
                             </div>
                             <span className={styles.descricao}>{produto.descricao}</span>
-                            <span className={styles.valor}>{'R$ ' + produto.valor}</span>
+                            <span className={styles.valor}>{parseFloat(produto.valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
                             <div className={styles.comprar}>
                                 <span className={styles.spanQtd}>Quantidade</span>
                                 <input
@@ -124,7 +124,7 @@ function Produto({ idProduto }) {
                                     onChange={nvVlr => handleAtlQtdVlr(nvVlr.target.value)}
                                     value={qtd}
                                 />
-                                <span className={styles.spanTt}>Total R$ {total}</span>
+                                <span className={styles.spanTt}>Total {parseFloat(total).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
                                 <button className={styles.button} onClick={() => handleAddItemCarrinho()}>
                                     <p className={styles.lblComp}>Inserir no carrinho</p>
                                     <img className={styles.imgBtn} src={carr} alt="adicionar" />

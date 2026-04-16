@@ -7,7 +7,7 @@ import { RiDeleteBin6Line, RiAddLine, RiSubtractLine, RiChat1Line } from "react-
 
 import styles from './index.module.css';
 
-import { carrinho } from './mockup';
+import { carrinho } from '../teste/mockup';
 
 function CompCarrinho() {
 
@@ -19,7 +19,7 @@ function CompCarrinho() {
     // Adicionar um campo temporário de id único aos produtos
     const inicializaCarrinhoComIds = carrinho.map((produto, index) => ({
       ...produto,
-      temp_id: `${produto.prd_id}-${index}-${new Date().getTime()}`
+      temp_id: `${produto.id}-${index}-${new Date().getTime()}`
     }));
 
     const [produtosCarrinho, setProdutosCarrinho] = useState(inicializaCarrinhoComIds);
@@ -32,7 +32,7 @@ function CompCarrinho() {
     // }, [produtosCarrinho]);
 
     const abrirModal = (produto) => {
-        setObservacao(produto.ppd_obs || "");
+        setObservacao(produto.observacao || "");
         setProdutoSelecionado(produto);
         setModalAberto(true);
     };
@@ -42,7 +42,7 @@ function CompCarrinho() {
     // const salvarObservacao = () => {
     //     setProdutosCarrinho(produtosCarrinho.map((produto) =>
     //         produto.temp_id === produtoSelecionado.temp_id
-    //             ? { ...produto, ppd_obs: observacao }
+    //             ? { ...produto, observacao: observacao }
     //             : produto
     //     ));
     //     fecharModal();
@@ -51,15 +51,15 @@ function CompCarrinho() {
     const aumentarQuantidade = (produto) => {
         setProdutosCarrinho(produtosCarrinho.map((p) =>
             p.temp_id === produto.temp_id
-                ? { ...p, ppd_qtd: p.ppd_qtd + 1 }
+                ? { ...p, quantidade: p.quantidade + 1 }
                 : p
         ));
     };
 
     const diminuirQuantidade = (produto) => {
         setProdutosCarrinho(produtosCarrinho.map((p) =>
-            p.temp_id === produto.temp_id && p.ppd_qtd > 1
-                ? { ...p, ppd_qtd: p.ppd_qtd - 1 }
+            p.temp_id === produto.temp_id && p.quantidade > 1
+                ? { ...p, quantidade: p.quantidade - 1 }
                 : p
         ));
     };
@@ -69,8 +69,8 @@ function CompCarrinho() {
     };
 
     const valorTotal = produtosCarrinho.reduce((total, produto) => {
-        const valor = parseFloat(produto.prd_valor.replace('$', '').replace(',', '.'));
-        return total + produto.ppd_qtd * valor;
+        const valor = parseFloat(produto.valor.replace('$', '').replace(',', '.'));
+        return total + produto.quantidade * valor;
     }, 0);
 
     return (
@@ -123,7 +123,7 @@ export default CompCarrinho;
 
 function Grid({ item, abrirModal, aumentarQuantidade, diminuirQuantidade, excluirProduto }) {
 
-    const total = parseFloat(item.prd_valor.replace('$', '').replace(',', '.')) * item.ppd_qtd;
+    const total = parseFloat(item.valor.replace('$', '').replace(',', '.')) * item.quantidade;
 
     // const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     // const apiPorta = process.env.NEXT_PUBLIC_API_PORTA;
@@ -140,20 +140,20 @@ function Grid({ item, abrirModal, aumentarQuantidade, diminuirQuantidade, exclui
                         <div className={styles.carrProduto}>
                             <div className={styles.contImgCarrProd}>
                                 <img
-                                    src={item.prd_img}
-                                    alt={item.prd_nome}
+                                    src={item.imagem}
+                                    alt={item.nome}
                                     className={styles.imagemProduto}
                                 />
                             </div>
-                            <span>{item.prd_nome}</span>
+                            <span>{item.nome}</span>
                         </div>
 
                         <div className={styles.observacao}>
                             <RiChat1Line className={styles.iconChat} onClick={() => abrirModal(item)} />
-                            {item.ppd_obs.length > 0 ? (
+                            {item.observacao.length > 0 ? (
                                 <textarea
                                     className={styles.textareaCarrinho}
-                                    value={item.ppd_obs} // O valor agora é gerenciado via "value"
+                                    value={item.observacao} // O valor agora é gerenciado via "value"
                                     readOnly
                                     onClick={() => abrirModal(item)}
                                 />
@@ -162,16 +162,16 @@ function Grid({ item, abrirModal, aumentarQuantidade, diminuirQuantidade, exclui
                             )}
                         </div>
                     </div>
-                    <RiDeleteBin6Line className={styles.iconActions} onClick={() => excluirProduto(item.prd_id)} />
+                    <RiDeleteBin6Line className={styles.iconActions} onClick={() => excluirProduto(item.id)} />
                 </div>
             </div>
 
             <div className={`${styles.carrProduto} ${styles.carrQtd}`}>
                 <RiSubtractLine className={styles.iconActions} onClick={() => diminuirQuantidade(item)} />
-                {item.ppd_qtd}
+                {item.quantidade}
                 <RiAddLine className={styles.iconActions} onClick={() => aumentarQuantidade(item)} />
             </div>
-            <div className={`${styles.carrProduto} ${styles.valores}`}>{item.prd_valor}</div>
+            <div className={`${styles.carrProduto} ${styles.valores}`}>{item.valor}</div>
             <div className={`${styles.carrProduto} ${styles.valores}`}>{total.toFixed(2)}</div>
         </div>
     );

@@ -5,7 +5,7 @@ import CardProduto from '../../componentes/cardProduto';
 
 import styles from './index.module.css';
 
-import { produtos } from './mockup';
+import { produtos } from '../teste/mockup';
 
 export default function Home() {
 
@@ -47,9 +47,9 @@ export default function Home() {
                 {
                     produtos.map(item =>
                         <CardProduto 
-                            nome = {item.prd_nome} 
-                            valor = {item.prd_valor} 
-                            imagem = {item.prd_img}
+                            nome = {item.nome} 
+                            valor = {item.valor} 
+                            imagem = {item.imgProduto}
                         />
                     )
                 }

@@ -7,7 +7,7 @@ import styles from './index.module.css';
 
 import ModalIngredientes from './modalIngredientes';
 
-import { ingredientesMock } from './mockup';
+import { ingredientesMock } from '../../../teste/mockup';
 
 export default function GerIngredientes() {
     const [ingredientes, setIngredientes] = useState(ingredientesMock);
@@ -78,20 +78,20 @@ export default function GerIngredientes() {
                 </thead>
                 <tbody>
                     {ingredientes.map((ingrediente) => (
-                        <tr key={ingrediente.ing_id}>
+                        <tr key={ingrediente.id}>
                             <td>
-                                <img src={ingrediente.ing_img} alt={ingrediente.ing_nome} className={styles.ingredienteImg} />
-                                {ingrediente.ing_nome}
+                                <img src={ingrediente.img} alt={ingrediente.nome} className={styles.ingredienteImg} />
+                                {ingrediente.nome}
                             </td>
 
-                            <td>R$ {ingrediente.ing_custo_adicional.toFixed(2)}</td>
+                            <td>R$ {ingrediente.custo_adicional.toFixed(2)}</td>
                             <td className={styles.acoes}>
                                 <MdEdit
                                     onClick={() => handleEditClick(ingrediente)}
                                     className={styles.destaqueImg}
                                 />
                                 <MdDelete
-                                    onClick={() => handleDeleteClick(ingrediente.ing_id)}
+                                    onClick={() => handleDeleteClick(ingrediente.id)}
                                     className={styles.destaqueImg}
                                 />
                             </td>

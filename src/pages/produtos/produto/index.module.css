@@ -124,7 +124,12 @@
     height: 4rem;
     width: 3rem;
     margin-left: 1rem; 
-    fill: currentColor;
+    /* fill: currentColor; */
+}
+
+.button:hover .imgBtn {
+    /* Este filtro transforma o tom escuro em quase branco */
+    filter: brightness(0) invert(1);
 }
 
 
