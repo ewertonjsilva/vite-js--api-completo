@@ -1,3 +1,11 @@
+/**
+ * @file   src\pages\home\index.jsx
+ * @author Ewerton
+ * @date   2026-04-17
+ * @desc   [Descrição do componente ou arquivo]
+ */
+
+import { Link } from 'react-router-dom';
 import { MdLunchDining, MdLocalBar, MdDining, MdIcecream, MdFastfood } from 'react-icons/md';
 
 import Slider from "../../componentes/slider";
@@ -9,7 +17,7 @@ import { produtos } from '../teste/mockup';
 
 export default function Home() {
 
-    console.log(produtos);
+    // console.log(produtos);
 
     return (
         <div className="container">
@@ -36,25 +44,36 @@ export default function Home() {
                 <MdFastfood className={styles.tpicon} />
             </div>
 
-            <div className={styles.produtos}>
+            {/* <div className={styles.produtos}> */}
 
-                {/* {
+            {/* {
                     produtos.map(item =>
                         <p>{item.prd_nome}</p>
                     )
                 } */}
 
-                {
-                    produtos.map(item =>
-                        <CardProduto 
-                            nome = {item.nome} 
-                            valor = {item.valor} 
-                            imagem = {item.imgProduto}
-                        />
-                    )
-                }
+            {/* {
+                produtos.map(item => 
+                        // <CardProduto 
+                        //     nome = {item.nome} 
+                        //     valor = {item.valor} 
+                        //     imagem = {item.imgProduto}
+                        // />
+                        // <Link
+                        //     to={`/produto/${item.id}`}
+                        //     key={item.id}
+                        //     style={{ textDecoration: 'none', color: 'inherit' }}
+                        // >
+                        //     <CardProduto
+                        //         nome={item.nome}
+                        //         valor={item.valor}
+                        //         imagem={item.imgProduto}
+                        //     />
+                        // </Link>
+            //         )
+            // }
 
-                {/* <div className={styles.card}>
+            {/* <div className={styles.card}>
                     <div className={styles.imagemContainer}>
                         <img
                             src='/temp/hamburger-bacon.jpg'
@@ -66,6 +85,22 @@ export default function Home() {
                     <span className={styles.produtoValor}>R$ 29,99</span>
                 </div> */}
 
+            {/* </div> */}
+
+            <div className={styles.produtos}>
+                {produtos.map(item => (
+                    <Link
+                        to={`/produto/${item.id}`}
+                        key={item.id}
+                        className={styles.linkCard} // Usando a classe do CSS Module
+                    >
+                        <CardProduto
+                            nome={item.nome}
+                            valor={item.valor}
+                            imagem={item.imgProduto}
+                        />
+                    </Link>
+                ))}
             </div>
         </div>
     );

@@ -1,3 +1,10 @@
+/**
+ * @file   src\pages\produtos\index.jsx
+ * @author Ewerton
+ * @date   2026-04-17
+ * @desc   [Descrição do componente ou arquivo]
+ */
+
 import styles from './index.module.css';
 
 export default function Produtos () {

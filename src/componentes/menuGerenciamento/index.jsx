@@ -1,3 +1,10 @@
+/**
+ * @file   src\componentes\menuGerenciamento\index.jsx
+ * @author Ewerton
+ * @date   2026-04-17
+ * @desc   [Descrição do componente ou arquivo]
+ */
+
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';

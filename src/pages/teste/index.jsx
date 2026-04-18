@@ -33,6 +33,9 @@ export default function Teste() {
             <Link to="/carrinho">
                 Carrinho
             </Link>
+            <Link to="/gerenciamento">
+                Gerenciamento
+            </Link>
         </div>
     );
 }

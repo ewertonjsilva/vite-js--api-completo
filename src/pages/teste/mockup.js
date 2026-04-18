@@ -1,3 +1,9 @@
+/**
+ * @file   src\pages\teste\mockup.js
+ * @author Ewerton
+ * @date   2026-04-17
+ * @desc   [Descrição do script ou função]
+ */
 
 import prod1 from '../../imagens/temp/hamburger-bacon.jpg';
 import prod2 from '../../imagens/temp/hamburger-batata.jpg';
@@ -70,7 +76,7 @@ export let produtos = [
     },
 ]
 
-export let estados = [
+export let mkpUfs = [
     {
         id: 35,
         uf: 'SP',
@@ -81,7 +87,7 @@ export let estados = [
     }
 ]
 
-export let cidades = [
+export let mkpCidades = [
     {
         id: 1,
         cidade: 'Tupã'
@@ -296,4 +302,22 @@ export let ingredientesMock = [
         "img": img_ingredientes,
         "custo_adicional": 7.00
     }
+];
+
+export let login = [
+    {
+		"id": 1,
+		"nome": "Agnelson",
+		"tipo": 0
+	}, 
+    {
+		"id": 2,
+		"nome": "Gionelson",
+		"tipo": 1
+	}, 
+    {
+		"id": 3,
+		"nome": "Edelson",
+		"tipo": 2
+	}    
 ];

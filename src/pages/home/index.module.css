@@ -1,10 +1,17 @@
+/*
+ * @file   src\pages\home\index.module.css
+ * @author Ewerton
+ * @date   2026-04-17
+ * @desc   [Descrição da folha de estilos]
+ */
+
 .containerApresentacao {
     margin: 1rem auto;
     /* height: 28.5rem;  */
     width: 100%;
-    max-width: 144rem; 
+    max-width: 144rem;
     /* padding: 0 2rem 0 2rem;  */
-    border: 0.4rem solid #B71C1C; 
+    border: 0.4rem solid #B71C1C;
     border-radius: 2rem;
     /* overflow: hidden; */
     display: flex;
@@ -12,19 +19,19 @@
 
 .imagemLocal {
     width: 50%;
-    border-radius: 2rem; 
+    border-radius: 2rem;
     margin: 1rem;
-} 
+}
 
 .containerTxtApresentacao {
-    display: flex; 
-    flex-direction: column; 
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
 .containerApresentacao p {
     font-size: 2.4rem;
-    margin: 1rem; 
+    margin: 1rem;
 }
 
 
@@ -47,13 +54,37 @@
 }
 
 
-.produtos {
-    /* margin: 1rem auto; */
+/* .produtos {    
     display: flex;
     justify-content: space-between;
     max-width: 1440px;
     border-radius: 2rem;
     flex-wrap: wrap;
+} */
+
+.produtos {
+    display: grid;
+    /* Cria 3 colunas iguais. Muda para 1fr no mobile se desejar */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    /* Espaçamento entre os cards */
+    width: 100%;
+    max-width: 1440px;
+    margin: 2rem auto;
+}
+
+/* Classe para o Link não quebrar o layout */
+.linkCard {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    /* Garante que o link preencha a área do card */
+    transition: transform 0.2s ease;
+}
+
+.linkCard:hover {
+    transform: translateY(-5px);
+    /* Efeito de levante no hover */
 }
 
 .loading {
@@ -75,7 +106,7 @@
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     /* background-color: #fff; */
-    margin-bottom: 1.6rem;     
+    margin-bottom: 1.6rem;
 }
 
 .card:hover {
@@ -113,4 +144,17 @@
     margin: 8px 0 0;
     color: #888;
     text-align: center;
+}
+
+/* Ajuste de responsividade */
+@media (max-width: 1024px) {
+    .produtos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .produtos {
+        grid-template-columns: 1fr;
+    }
 }

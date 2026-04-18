@@ -1,23 +1,43 @@
+/*
+ * @file   src\componentes\cardProduto\index.module.css
+ * @author Ewerton
+ * @date   2026-04-17
+ * @desc   [Descrição da folha de estilos]
+ */
+
 /* Card */
-.card {
+/* .card {
     width: 30%;
     height: 26rem;
-    /* border: 1px solid #ddd; */
     border-radius: 2rem;
     padding: 1.6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* background-color: #fff; */
     margin-bottom: 1.6rem;
+} */
+
+.card {
+    width: 100%;
+    /* Ocupa o espaço que o Grid da Home der */
+    min-height: 32rem;
+    /* Aumentado para caber a imagem e textos */
+    border-radius: 2rem;
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+    box-sizing: border-box;
 }
 
 .card:hover {
     cursor: pointer;
 }
 
-.imagemContainer {
+/* .imagemContainer {
     width: 30rem;
     height: 30rem;
     display: flex;
@@ -26,26 +46,60 @@
     overflow: hidden;
     border-radius: 2rem;
     margin-bottom: 16px;
+} */
+
+.imagemContainer {
+    width: 100%;
+    height: 20rem;
+    /* Altura fixa para a imagem no card */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    margin-bottom: 1.2rem;
 }
 
-.imagemProduto {
+/* .imagemProduto {
     object-fit: fill;
     width: 100%;
     height: 100%;
+} */
+
+.imagemProduto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* "cover" é melhor que "fill" para não distorcer a comida */
 }
 
-.produtoNome {
+/* .produtoNome {
     font-size: 18px;
     font-weight: 600;
     margin: 0;
     text-align: center;
     color: #333;
+} */
+
+.produtoNome {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0.5rem 0;
+    text-align: center;
 }
 
-.produtoValor {
+/* .produtoValor {
     font-size: 16px;
     font-weight: 500;
     margin: 8px 0 0;
     color: #888;
+    text-align: center;
+} */
+
+.produtoValor {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #B71C1C; /* Cor temática para o preço */
     text-align: center;
 }

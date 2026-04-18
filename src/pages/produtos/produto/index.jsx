@@ -1,5 +1,12 @@
+/**
+ * @file   src\pages\produtos\produto\index.jsx
+ * @author Ewerton
+ * @date   2026-04-17
+ * @desc   [Descrição do componente ou arquivo]
+ */
+
 import { useState, useEffect } from 'react';
-import { useNavigate } from "react-router";
+import { useParams, useNavigate } from "react-router-dom";
 // import { useSelector, useDispatch } from "react-redux";
 // import { addToCart } from '@/services/redux/store/cartSlice';
 
@@ -8,9 +15,9 @@ import carr from '../../../imagens/icones/carrinho.svg';
 
 import styles from './index.module.css';
 
-import { produtos} from '../../teste/mockup';
+import { produtos } from '../../teste/mockup';
 
-function Produto({ idProduto }) {
+function Produto() {
 
     // const [produto, setProduto] = useState({
     //     "id": "",
@@ -21,9 +28,36 @@ function Produto({ idProduto }) {
     //     "imgProduto": "",
     //     "descricao": ""
     // });
-    const [produto, setProduto] = useState(produtos[0]);
+
+    const { id } = useParams();
+
+    // Busca o produto no mockup que tenha o mesmo ID da URL
+    const produtoEncontrado = produtos.find(p => String(p.id) === String(id));
+
+    // const [produto, setProduto] = useState(produtos[0]);
+    const [produto, setProduto] = useState(produtoEncontrado);
+
     const [qtd, setQtd] = useState(1);
-    const [total, setTotal] = useState(produtos[0].valor * qtd);
+
+    // const [total, setTotal] = useState(produtos[0].valor * qtd);
+    const [total, setTotal] = useState(0);
+
+    // Atualiza o total quando o produto ou a quantidade mudar
+    useEffect(() => {
+        if (produto) {
+            setTotal((produto.valor * qtd).toFixed(2));
+        }
+    }, [produto, qtd]);
+
+    // Se não encontrar o produto (id inválido na URL)
+    if (!produto) {
+        return (
+            <div className={styles.container}>
+                <h1>Produto não encontrado</h1>
+                <button onClick={() => navigate('/')}>Voltar para Home</button>
+            </div>
+        );
+    }
 
     // const dispatch = useDispatch();  // Utiliza o dispatch do Redux
 

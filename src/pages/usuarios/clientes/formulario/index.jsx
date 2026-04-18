@@ -9,7 +9,7 @@ import IconCad from '../../../../imagens/icones/cadastrar.svg';
 
 import styles from './index.module.css';
 
-import { mkpUfs, mkpCidades } from './mockup';
+import { mkpUfs, mkpCidades } from '../../../teste/mockup';
 
 // import api from '@/services/api';
 
