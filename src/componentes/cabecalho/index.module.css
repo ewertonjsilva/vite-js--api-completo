@@ -1,3 +1,11 @@
+/*
+ * @file   src\componentes\cabecalho\index.module.css
+ * @author Ewerton
+ * @date   2026-04-22
+ * @desc   [Descrição da folha de estilos]
+ */
+
+
 .containerNav {
     display: flex;
     justify-content: center;
@@ -39,23 +47,11 @@
 
 .containerNav .menu .menuGrande {
     display: flex;
-}
-
-.containerNav .menu .menuGrande a {
-    width: 12rem;
-    height: 8rem;
-    color: #B71C1C;
-    text-align: center;
-    text-decoration: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
-    font-size: 1.6rem;
-    font-weight: bold;
-    cursor: pointer;
 }
 
+/* Estilo Base para Links e Botão de Sair no Menu Grande */
+.containerNav .menu .menuGrande a,
 .containerNav .menu .menuGrande .menuSair {
     width: 12rem;
     height: 8rem;
@@ -63,20 +59,27 @@
     text-align: center;
     text-decoration: none;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     font-size: 1.6rem;
     font-weight: bold;
     cursor: pointer;
+    box-sizing: border-box; /* Importante para a borda não empurrar os vizinhos */
+    background: none;
+    border: none;
+    transition: 0.2s;
 }
 
-.containerNav .menu .menuGrande a:hover {
+/* Hover Unificado */
+.containerNav .menu .menuGrande a:hover,
+.containerNav .menu .menuGrande .menuSair:hover {
     border: 0.4rem solid #F05545;
     color: #F05545;
 }
 
-.containerNav .menu .menuGrande a.active {
+/* Estado Ativo Unificado */
+.containerNav .menu .menuGrande a.active,
+.containerNav .menu .menuGrande .menuSair.active {
     background-color: #B71C1C;
     color: #fafafa;
     border: 0.4rem solid #B71C1C;
@@ -119,6 +122,26 @@
 .menuMobileExpandidon,
 .menuMobileExpandidos {
     transition: max-height 0.3s ease-out;
+}
+
+/* Ajustes Mobile */
+.containerNav .menuMobileExpandidos button {
+    width: 100%;
+    height: 4rem;
+    background: none;
+    border: 0.4rem solid #FAFAFA;
+    color: #B71C1C;
+    font-size: 1.6rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem; /* Alinhado com os links mobile */
+}
+
+.containerNav .menuMobileExpandidos button:hover {
+    border: 0.4rem solid #F05545;
+    color: #F05545;
 }
 
 @media screen and (max-width: 940px) {

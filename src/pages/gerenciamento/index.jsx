@@ -1,3 +1,9 @@
+/**
+ * @file   src\pages\gerenciamento\index.jsx
+ * @author Ewerton
+ * @date   2026-04-22
+ * @desc   [Descrição do componente ou arquivo]
+ */
 
 export default function HomeGerenciamento() {
     return(

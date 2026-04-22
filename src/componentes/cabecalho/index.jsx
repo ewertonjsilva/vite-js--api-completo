@@ -1,93 +1,91 @@
 import { useState } from 'react';
-import { Link } from "react-router";
-import { useLocation } from 'react-router-dom';
-
-import { MdFastfood, MdMenu } from 'react-icons/md';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
+import { MdFastfood, MdMenu, MdLogout, MdPerson, MdShoppingCart } from 'react-icons/md';
 
 import styles from './index.module.css';
 
 function Cabecalho() {
-
     const [mobile, setMobile] = useState(false);
-
+    const { usuario, logout } = useAuth();
+    const navigate = useNavigate();
     const rota = useLocation();
 
     function ativaMenu() {
-        if (mobile === false) {
-            setMobile(true);
-        } else {
-            setMobile(false);
-        }
+        setMobile(!mobile);
     }
-    // console.log(rota);
-    
+
+    const handleLogout = () => {
+        logout();
+        setMobile(false);
+        navigate('/login');
+    };
+
+    // Função auxiliar para aplicar a classe active
+    const linkStyle = (path) => rota.pathname === path ? styles.active : '';
+
     return (
         <header className={styles.containerNav}>
             <div className={styles.menu}>
-                <div className={styles.logo}>
-                    <MdFastfood className={styles.icon} id="logo" />
+                <div className={styles.logo} onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+                    <MdFastfood className={styles.icon} />
                     <label className={styles.titulo}>BomBurguer</label>
                 </div>
+
                 <nav className={styles.menuGrande}>
-                    <Link
-                        to='/'
-                        className={rota.pathname === '/' ? styles.active : ''}
-                    >Home</Link>
-                    <Link
-                        to='/produtos'
-                        className={rota.pathname === '/produtos' ? styles.active : ''}
-                    >Produtos</Link>
+                    <Link to='/' className={linkStyle('/')}>Home</Link>
+                    <Link to='/produtos' className={linkStyle('/produtos')}>Produtos</Link>
+                    <Link to='/sobre' className={linkStyle('/sobre')}>Sobre</Link>
 
-                    <Link
-                        to='/sobre'
-                        className={rota.pathname === '/sobre' ? styles.active : ''}
-                    >Sobre</Link>
+                    {usuario ? (
+                        <>
+                            {/* Perfil */}
+                            <Link to="/usuario-edt" className={linkStyle('/usuario-edt')}>
+                                <MdPerson size={28} title="Perfil" />
+                            </Link>
 
-                    <Link
-                        to='/cadastro'
-                        className={rota.pathname === '/cadastro' ? styles.active : ''}
-                    >Cadastrar</Link>
+                            {/* Carrinho - Apenas Cliente (Tipo 0) */}
+                            {usuario.tipo === 0 && (
+                                <Link to="/carrinho" className={linkStyle('/carrinho')}>
+                                    <MdShoppingCart size={28} title="Carrinho" />
+                                </Link>
+                            )}
 
-                    <Link
-                        to='/login'
-                        className={rota.pathname === '/login' ? styles.active : ''}
-                    >Login</Link>
-
+                            {/* Botão Sair - Usando a mesma classe de estilo dos links */}
+                            <button onClick={handleLogout} className={styles.menuSair}>
+                                <MdLogout size={28} title="Sair" />
+                            </button>
+                        </>
+                    ) : (
+                        <>
+                            <Link to='/cadastro' className={linkStyle('/cadastro')}>Cadastrar</Link>
+                            <Link to='/login' className={linkStyle('/login')}>Login</Link>
+                        </>
+                    )}
                 </nav>
+
                 <div className={styles.menuMobile}>
-                    <MdMenu onClick={ativaMenu} className={styles.icon} id="logo" />
+                    <MdMenu onClick={ativaMenu} className={styles.icon} />
                 </div>
             </div>
 
-            <div
-                className={mobile === false ? styles.menuMobileExpandidon : styles.menuMobileExpandidos}
-                id="mostraOpMobile"
-            >
-                <Link
-                    to='/'
-                    onClick={ativaMenu}
-                    className={rota.pathname === '/' ? styles.active : ''}
-                >Home</Link>
-                <Link
-                    to='/produtos'
-                    onClick={ativaMenu}
-                    className={rota.pathname === '/produtos' ? styles.active : ''}
-                >Produtos</Link>
-                <Link
-                    to='/cadastro'
-                    onClick={ativaMenu}
-                    className={rota.pathname === '/cadastro' ? styles.active : ''}
-                >Cadastrar</Link>
-                <Link
-                    to='/sobre'
-                    onClick={ativaMenu}
-                    className={rota.pathname === '/sobre' ? styles.active : ''}
-                >Sobre</Link>
-                <Link
-                    to='/login'
-                    onClick={ativaMenu}
-                    className={rota.pathname === '/login' ? styles.active : ''}
-                >Login</Link>
+            {/* Menu Mobile Expandido */}
+            <div className={mobile ? styles.menuMobileExpandidos : styles.menuMobileExpandidon}>
+                <Link to='/' onClick={ativaMenu} className={linkStyle('/')}>Home</Link>
+                <Link to='/produtos' onClick={ativaMenu} className={linkStyle('/produtos')}>Produtos</Link>
+
+                {usuario ? (
+                    <>
+                        <Link to='/usuario-edt' onClick={ativaMenu}>Perfil</Link>
+                        {usuario.tipo === 0 && <Link to='/carrinho' onClick={ativaMenu}>Carrinho</Link>}
+                        <button onClick={handleLogout} className={styles.btnSairMobile}>Sair</button>
+                    </>
+                ) : (
+                    <>
+                        <Link to='/cadastro' onClick={ativaMenu}>Cadastrar</Link>
+                        <Link to='/login' onClick={ativaMenu}>Login</Link>
+                    </>
+                )}
             </div>
         </header>
     );

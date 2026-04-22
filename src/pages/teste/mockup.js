@@ -15,9 +15,9 @@ import prod6 from '../../imagens/temp/sorvete.jpeg';
 import ic_lanche from '../../imagens/icones/lanche.svg';
 import ic_combo from '../../imagens/icones/todos.svg';
 import ic_bebida from '../../imagens/icones/suco.svg';
-import ic_sobremesa from '../../imagens/icones/icecream.svg'; 
+import ic_sobremesa from '../../imagens/icones/icecream.svg';
 
-import img_ingredientes from '../../imagens/temp/ingredientes.png'; 
+import img_ingredientes from '../../imagens/temp/ingredientes.png';
 
 export let produtos = [
     {
@@ -306,18 +306,24 @@ export let ingredientesMock = [
 
 export let login = [
     {
-		"id": 1,
-		"nome": "Agnelson",
-		"tipo": 0
-	}, 
+        "id": 1,
+        "nome": "Agnelson",
+        "tipo": 0,
+        "email": "cliente@email.com",
+        "senha": "123"
+    },
     {
-		"id": 2,
-		"nome": "Gionelson",
-		"tipo": 1
-	}, 
+        "id": 2,
+        "nome": "Gionelson",
+        "tipo": 1,
+        "email": "admin@email.com",
+        "senha": "123"
+    },
     {
-		"id": 3,
-		"nome": "Edelson",
-		"tipo": 2
-	}    
+        "id": 3,
+        "nome": "Edelson",
+        "tipo": 2,
+        "email": "gerente@email.com",
+        "senha": "123"
+    }
 ];

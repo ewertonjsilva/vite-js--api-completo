@@ -28,7 +28,12 @@
 
 .container .containerItem .imagemProd {
     object-fit: fill;
-    /* cover */
+    /* 
+        Object-fit: cover: Em fotos de comida, 
+        o fill estica a imagem. O cover corta 
+        as bordas mas mantém a proporção, deixando 
+        o aspecto muito mais profissional.
+    */
     width: 80%;
     height: 100%;
     border-radius: 2rem;

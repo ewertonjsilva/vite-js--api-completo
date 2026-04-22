@@ -1,0 +1,17 @@
+.containerGerenciamento {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    position: fixed;
+    height: 100vh;
+    background: #222;
+}
+
+.conteudo {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 2rem;
+}
