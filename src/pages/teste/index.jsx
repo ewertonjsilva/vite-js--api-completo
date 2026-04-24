@@ -1,3 +1,10 @@
+/**
+ * @file   src\pages\teste\index.jsx
+ * @author Ewerton
+ * @date   2026-04-23
+ * @desc   [Descrição do componente ou arquivo]
+ */
+
 import { Link } from "react-router";
 
 import styles from './index.module.css';
