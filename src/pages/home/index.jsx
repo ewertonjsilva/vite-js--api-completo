@@ -1,7 +1,7 @@
 /**
  * @file   src\pages\home\index.jsx
  * @author Ewerton
- * @date   2026-04-17
+ * @date   2026-04-24
  * @desc   [Descrição do componente ou arquivo]
  */
 
@@ -43,14 +43,15 @@ export default function Home() {
                 <MdIcecream className={styles.tpicon} />
                 <MdFastfood className={styles.tpicon} />
             </div>
+{/* 
+            <div className={styles.produtos}>
 
-            {/* <div className={styles.produtos}> */}
-
-            {/* {
-                    produtos.map(item =>
-                        <p>{item.prd_nome}</p>
-                    )
-                } */}
+            {
+                produtos.map(item =>
+                    <p key={item.nome}>{item.nome}</p>
+                )
+            }
+            </div> */}
 
             {/* {
                 produtos.map(item => 
@@ -86,7 +87,7 @@ export default function Home() {
                 </div> */}
 
             {/* </div> */}
-
+            
             <div className={styles.produtos}>
                 {produtos.map(item => (
                     <Link
@@ -101,7 +102,7 @@ export default function Home() {
                         />
                     </Link>
                 ))}
-            </div>
+            </div> 
         </div>
     );
 }
