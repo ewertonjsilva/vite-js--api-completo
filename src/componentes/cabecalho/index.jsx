@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { MdFastfood, MdMenu, MdLogout, MdPerson, MdShoppingCart } from 'react-icons/md';
+import { MdFastfood, MdMenu, MdLogout, MdPerson, MdShoppingCart, MdFactory  } from 'react-icons/md';
 
 import styles from './index.module.css';
 
@@ -40,7 +40,7 @@ function Cabecalho() {
                     {usuario ? (
                         <>
                             {/* Perfil */}
-                            <Link to="/usuario-edt" className={linkStyle('/usuario-edt')}>
+                            <Link to="/usuario/perfil" className={linkStyle('/usuario/perfil')}>
                                 <MdPerson size={28} title="Perfil" />
                             </Link>
 
@@ -48,6 +48,13 @@ function Cabecalho() {
                             {usuario.tipo === 0 && (
                                 <Link to="/carrinho" className={linkStyle('/carrinho')}>
                                     <MdShoppingCart size={28} title="Carrinho" />
+                                </Link>
+                            )}
+                            
+                            {/* Gerenciamento (Tipo 0) */}
+                            {usuario.tipo === 1 && (
+                                <Link to="/gerenciamento/dashboard" className={linkStyle('/gerenciamento/dashboard')}>
+                                    <MdFactory  size={28} title="Gerenciamento" />
                                 </Link>
                             )}
 

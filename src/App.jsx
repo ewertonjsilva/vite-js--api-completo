@@ -39,10 +39,9 @@ function App() {
 
       {/* Rotas de Gerenciamento (Aninhadas) */}
       <Route path="/gerenciamento" element={<LayoutGerenciamento />} >
-        <Route index element={<HomeGerenciamento />} />
+        <Route path="dashboard" index element={<HomeGerenciamento />} />
         <Route path="produtos" element={<GerProdutos />} />
-        <Route path="ingredientes" element={<GerIngredientes />} />
-        <Route path="usuarios" element={<EdtUsuario />} />
+        <Route path="ingredientes" element={<GerIngredientes />} />        
         <Route path="mesas" element={<Mesas />} />
       </Route>
 
@@ -50,6 +49,7 @@ function App() {
       {/* <Route path="/gerenciamento-ingredientes" element={<GerIngredientes />} /> */}
       {/* <Route path="/usuario-edt" element={<EdtUsuario />} /> */}
       <Route path="/carrinho" element={<CompCarrinho />} />
+      <Route path="/usuario/perfil" element={<EdtUsuario />} />
       {/* <Route path="/mesas" element={<Mesas />} /> */}
 
 

@@ -3,6 +3,7 @@ import styles from './index.module.css';
 
 import { MdDelete } from "react-icons/md";
 
+import { mesas } from '../../teste/mockup';
 // import api from '@/services/api';
 import ModalMesas from './modalMesas';
 
@@ -12,7 +13,7 @@ function Mesas() {
 
     const [showModal, setShowModal] = useState(false);
 
-    const [mesas, setMesas] = useState([]);
+    // const [mesas, setMesas] = useState([]);
     // const navigate = useNavigate();
 
     const getStatusColor = (status) => {
@@ -113,20 +114,20 @@ function Mesas() {
         <div className={styles.mesasContainer}>
             {mesas.map((mesa) => (
                 <div
-                    key={mesa.mes_id}
+                    key={mesa.id}
                     className={styles.mesaCard}
-                    style={{ borderColor: getStatusColor(mesa.mes_status) }}
+                    style={{ borderColor: getStatusColor(mesa.status) }}
                 // onClick={() => handleCardClick(mesa)}
                 >
                     <div className={styles.constainerDelete}>
-                        <MdDelete className={styles.iconDelete} onClick={() => handleExcluiMesa(mesa.mes_id)} />
+                        <MdDelete className={styles.iconDelete} /*size={20}*/ onClick={() => handleExcluiMesa(mesa.id)} />
                     </div>
-                    <h2>Mesa {mesa.mes_nome}</h2>
-                    <p>Status: {mesa.mes_status === 0 ? 'Livre' : mesa.mes_status === 1 ? 'Reservada' : mesa.mes_status === 2 ? 'Ocupada' : 'Inativa'}</p>
-                    <p>Lugares: {mesa.mes_lugares}</p>
+                    <h2>Mesa {mesa.nome}</h2>
+                    <p>Status: {mesa.status === 0 ? 'Livre' : mesa.status === 1 ? 'Reservada' : mesa.status === 2 ? 'Ocupada' : 'Inativa'}</p>
+                    <p>Lugares: {mesa.lugares}</p>
                     <div className={styles.mesaLugaresControl}>
-                        <button onClick={(e) => { e.stopPropagation(); alterarLugares(mesa.mes_id, -1, mesa); }}>-</button>
-                        <button onClick={(e) => { e.stopPropagation(); alterarLugares(mesa.mes_id, 1, mesa); }}>+</button>
+                        <button onClick={(e) => { e.stopPropagation(); alterarLugares(mesa.id, -1, mesa); }}>-</button>
+                        <button onClick={(e) => { e.stopPropagation(); alterarLugares(mesa.id, 1, mesa); }}>+</button>
                     </div>
                 </div>
             ))}

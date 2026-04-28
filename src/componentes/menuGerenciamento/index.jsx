@@ -16,6 +16,12 @@ export default function MenuGerenciamento() {
     return (
         <div className={styles.containerMenuGerenciamento}>
             <Link
+                to='/gerenciamento/dashboard' // No React Router usa-se 'to' em vez de 'href'
+                className={rotaAtual === '/gerenciamento/dashboard' ? styles.active : styles.link}
+            >
+                Dashboard
+            </Link>
+            <Link
                 to='/gerenciamento/produtos' // No React Router usa-se 'to' em vez de 'href'
                 className={rotaAtual === '/gerenciamento/produtos' ? styles.active : styles.link}
             >

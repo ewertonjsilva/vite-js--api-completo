@@ -169,7 +169,7 @@ export let mesas = [
     {
         "id": 5,
         "nome": "5",
-        "status": 2,
+        "status": 3,
         "lugares": 4,
         "pedido": 5
     }

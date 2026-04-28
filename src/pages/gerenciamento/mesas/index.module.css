@@ -53,7 +53,8 @@
 }
 
 .iconDelete {
-    color: #7F0000;
+    color: #7F0000; 
+    font-size: 2rem;
 }
 
 .iconDelete:hover {
