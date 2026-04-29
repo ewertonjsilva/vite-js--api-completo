@@ -31,7 +31,7 @@ function Login() {
             // 3. Lógica de Redirecionamento por Nível de Acesso
             // Tipo 1 ou 2 vai para Gerenciamento
             if (usuarioEncontrado.tipo === 1 || usuarioEncontrado.tipo === 2) {
-                navigate('/gerenciamento');
+                navigate('/gerenciamento/dashboard');
             }
             // Tipo 0 (ou outros) vai para Home Pública
             else {
