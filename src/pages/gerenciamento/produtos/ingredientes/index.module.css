@@ -49,6 +49,7 @@
     /* width: 0 auto; */
     border-collapse: collapse;
     /* margin-left: 1rem; */
+    font-size: 1.6rem;
 }
 
 .table th {
@@ -65,10 +66,29 @@
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
+    height: 0.1rem;
 }
 
 .table tr:hover td {
     background-color: #F05545;
+}
+
+.firstColumnFlex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Melhor alinhar à esquerda em tabelas */
+    gap: 1rem;
+    height: 100%;
+    min-height: 5rem;
+    /* Mesma altura da imagem */
+}
+
+.imgNomeProduto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .ingredienteImg {

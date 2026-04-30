@@ -37,14 +37,13 @@ export default function ModalProdutos({ ingrediente, onClose, titulo }) {
         data.append('custoComoAdicional', formData.ing_custo_adicional);
 
         if (selectedFile) {
-            data.append('imagem', selectedFile); // O nome 'imagem' deve bater com o upload.single('imagem') no backend
+            data.append('img', selectedFile); // O nome 'imagem' deve bater com o upload.single('imagem') no backend
         }
 
         try {
             if (ingrediente) {
-                // EDIÇÃO (PATCH)
-                data.append('id', ingrediente.id);
-                const response = await api.patch('/ingredientes', data);
+                // EDIÇÃO (PATCH)                
+                const response = await api.patch(`/ingredientes/${ingrediente.id}`, data);
                 if (response.data.sucesso) {
                     alert('Ingrediente atualizado!');
                     onClose(true); // Fecha e avisa para atualizar a lista

@@ -10,7 +10,7 @@ import styles from './index.module.css';
 
 export default function GerIngredientes() {
     const [ingredientes, setIngredientes] = useState([]);
-    const [produtoSelecionado, setProdutoSelecionado] = useState(null);
+    const [ingredienteSelecionado, setIngredienteSelecionado] = useState(null);
     const [loading, setLoading] = useState(true);
     const [erro, setErro] = useState(null);
     const [showModal, setShowModal] = useState(false);
@@ -50,7 +50,7 @@ export default function GerIngredientes() {
         if (window.confirm("Tem certeza que deseja excluir este ingrediente?")) {
             try {
                 // No seu controller, você espera o ID no body (request.body)
-                await api.delete('/ingredientes', { data: { id } });
+                await api.delete(`/ingredientes/${id}`);
 
                 // Atualiza o estado local para remover o item da lista imediatamente
                 setIngredientes(prev => prev.filter(ing => ing.id !== id));
@@ -107,12 +107,14 @@ export default function GerIngredientes() {
                         {ingredientes.map((ingrediente) => (
                             <tr key={ingrediente.id}>
                                 <td>
-                                    <img src={ingrediente.img} alt={ingrediente.nome} className={styles.ingredienteImg} />
-                                    {ingrediente.nome}
+                                    <div className={styles.imgNomeProduto}>
+                                        <img src={ingrediente.img} alt={ingrediente.nome} className={styles.ingredienteImg} />
+                                        <span>{ingrediente.nome}</span>
+                                    </div>
                                 </td>
 
                                 <td>R$ {ingrediente.custo_adicional}</td>
-                                <td className={styles.acoes}>
+                                <td>
                                     <MdEdit
                                         onClick={() => handleEditClick(ingrediente)}
                                         className={styles.destaqueImg}
@@ -129,7 +131,11 @@ export default function GerIngredientes() {
             )}
 
             {showModal && (
-                <ModalIngredientes produto={produtoSelecionado} onClose={handleModalClose} titulo={titulo} />
+                <ModalIngredientes
+                    ingrediente={ingredienteSelecionado}
+                    onClose={handleModalClose}
+                    titulo={titulo}
+                />
             )}
         </div>
     );
