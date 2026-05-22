@@ -13,6 +13,12 @@ import img2d from '../../../imagens/temp/slider/promoLanchePeixe.png';
 import img3 from '../../../imagens/temp/sorvete.jpeg';
 import img3d from '../../../imagens/temp/slider/promoGenerica.png';
 
+/*
+    Ao clicar no card do produto, se ele estiver ativo, redirecionar para a tela de edição 
+    do produto, se ele estiver inativo, não redirecionar e mostrar um alerta informando 
+    que o produto está inativo. Somente produtos ativos podem ser editados, produtos 
+    inativos não podem ser editados. Somente produtos inativos podem ser excluídos.     
+*/
 const produtosMock = [
     {
         prd_id: 1,

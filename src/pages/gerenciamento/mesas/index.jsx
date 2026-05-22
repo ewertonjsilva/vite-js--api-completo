@@ -9,6 +9,14 @@ import ModalMesas from './modalMesas';
 
 // import { useNavigate } from 'react-router-dom'; // Se estiver usando React Router
 
+/* 
+    Ao clicar no card da mesa, se ela estiver ocupada, redirecionar para a tela de 
+    pedido da mesa, se estiver livre ou reservada, redirecionar para a tela de reserva 
+    ou pedido, se ela estiver inativa, não redirecionar e mostrar um alerta informando 
+    que a mesa está inativa. somente mesas  livres ou reservadas podem ser editadas, mesas 
+    ocupadas ou inativas não podem ser editadas. Somente mesas inativas podem ser excluídas.
+*/
+
 function Mesas() {
 
     const [showModal, setShowModal] = useState(false);

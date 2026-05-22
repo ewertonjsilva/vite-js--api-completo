@@ -12,6 +12,17 @@ import styles from './index.module.css';
 
 // import api from '@/services/api';
 
+/*
+    Ao clicar no card do usuário, se ele estiver ativo, redirecionar para a tela de 
+    edição do usuário, se ele estiver inativo ou bloqueado, não redirecionar e mostrar 
+    um alerta informando que o usuário está inativo ou bloqueado. Somente usuários ativos 
+    podem ser editados, usuários inativos ou bloqueados não podem ser editados. Somente 
+    usuários inativos podem ser excluídos.
+    Somente usuário do tipo 1 (administrador) pode acessar a tela de gerenciamento de usuários, 
+    os usuários do tipo 2 (cliente) não podem acessar a tela de gerenciamento de usuários, 
+    e caso tentem acessar, devem ser redirecionados para a home pública e mostrar um alerta informando 
+    que eles não têm permissão para acessar a tela de gerenciamento de usuários.
+*/
 export default function EdtUsuario() {
 
     let navigate = useNavigate();
