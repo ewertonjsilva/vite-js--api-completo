@@ -19,6 +19,7 @@ import EdtUsuario from './pages/gerenciamento/usuarios';
 import Mesas from './pages/gerenciamento/mesas';
 import CompCarrinho from './pages/carrinho';
 import HomeGerenciamento from './pages/gerenciamento';
+import Pedidos from './pages/pedidos';
 import NotFound from './pages/notFound';
 
 
@@ -49,6 +50,7 @@ function App() {
       {/* <Route path="/gerenciamento-ingredientes" element={<GerIngredientes />} /> */}
       {/* <Route path="/usuario-edt" element={<EdtUsuario />} /> */}
       <Route path="/carrinho" element={<CompCarrinho />} />
+      <Route path="/pedidos" element={<Pedidos />} />
       <Route path="/usuario/perfil" element={<EdtUsuario />} />
       {/* <Route path="/mesas" element={<Mesas />} /> */}
 
