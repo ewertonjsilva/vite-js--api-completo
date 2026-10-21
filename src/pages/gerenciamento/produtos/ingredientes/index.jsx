@@ -1,3 +1,10 @@
+/**
+ * @file   src\pages\gerenciamento\produtos\ingredientes\index.jsx
+ * @author Ewerton
+ * @date   2026-10-20
+ * @desc   [Descrição do componente ou arquivo]
+ */
+
 import { useState, useEffect } from 'react';
 import { MdEdit, MdDelete } from 'react-icons/md';
 

@@ -1,3 +1,10 @@
+/**
+ * @file   src\services\pedidos.js
+ * @author Ewerton
+ * @date   2026-10-20
+ * @desc   [Descrição do componente ou arquivo]
+ */
+
 import api from './apis';
 
 const ENDPOINT = '/pedidos';

@@ -1,3 +1,10 @@
+/**
+ * @file   src\pages\gerenciamento\produtos\ingredientes\modalIngredientes.jsx
+ * @author Ewerton
+ * @date   2026-10-20
+ * @desc   [Descrição do componente ou arquivo]
+ */
+
 import { useState, useEffect } from 'react';
 
 import api from '../../../../services/apis';

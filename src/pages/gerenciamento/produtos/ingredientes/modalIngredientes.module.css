@@ -1,3 +1,11 @@
+/**
+ * @file   src\pages\gerenciamento\produtos\ingredientes\modalIngredientes.module.css
+ * @author Ewerton
+ * @date   2026-10-20
+ * @desc   [Descrição do componente ou arquivo]
+ */
+
+
 .modal {
     position: fixed;
     top: 0;

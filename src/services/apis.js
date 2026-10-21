@@ -1,3 +1,10 @@
+/**
+ * @file   src\services\apis.js
+ * @author Ewerton
+ * @date   2026-10-20
+ * @desc   [Descrição do componente ou arquivo]
+ */
+
 // npm install axios
 
 import axios from 'axios';
